@@ -28,11 +28,8 @@ export class UserResolver {
     }
 
     
-    @Query(() => String)
+    @Query(() => UserModel)
     async verify(@Arg('input')data: CreateUserInput) {
-        const isPasswordValid = await this.checkPassword(data)
-        
-        
-        return "checked"
+       return await this.checkPassword(data)
     }
 }

@@ -9,12 +9,17 @@ input CreateUserInput {
 }
 
 type Query {
-  verify(input: CreateUserInput!): String!
+  verify(input: CreateUserInput!): UserModel!
 }
 
 input RulesInput {
   rule: possibleRules!
   value: Int!
+}
+
+type UserModel {
+  noMatch: [possibleRules!]!
+  verify: Boolean!
 }
 
 """Possible rules for the password"""
