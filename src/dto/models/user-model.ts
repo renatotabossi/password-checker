@@ -21,6 +21,6 @@ export class UserModel{
     @Field()
     verify: boolean
 
-    @Field(() => [PossibleRules])
-    noMatch: PossibleRules[]
+    @Field(() => [PossibleNoMatch])
+    noMatch: PossibleNoMatch[]
 }

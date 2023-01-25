@@ -1,4 +1,4 @@
-import { Field, InputType, Int, ObjectType, registerEnumType} from "type-graphql";
+import { Field, InputType, Int, registerEnumType} from "type-graphql";
 
 
 
@@ -28,7 +28,7 @@ export class RulesInput {
 @InputType()
 export class CreateUserInput{
     @Field()
-    password: string;
+    password: string
 
     @Field(type => [RulesInput])
     rules: RulesInput[]
