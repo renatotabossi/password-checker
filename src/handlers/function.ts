@@ -47,10 +47,10 @@ function noRepetedFunc(rule: CreateUserInput): boolean{
 }
 
 export const validatorMap: ValidatorMap = {
-    minimal_size: minSizeFunc,
-    minimal_upper_case: minUppercaseFunc,
-    minimal_lower_case: minLowercaseFunc,
-    minimal_digit: minDigitFunc,
-    minimal_special_characters: minSpecialCharsFunc,
-    no_repeat: noRepetedFunc
+    minSize: minSizeFunc,
+    minUppercase: minUppercaseFunc,
+    minLowercase: minLowercaseFunc,
+    minDigit: minDigitFunc,
+    minSpecialChars: minSpecialCharsFunc,
+    noRepeted: noRepetedFunc
 }

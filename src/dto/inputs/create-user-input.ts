@@ -1,20 +1,9 @@
 import { Field, InputType, Int, registerEnumType} from "type-graphql";
+import { PossibleRules } from "../shared/rules.model";
 
 
 
-export enum PossibleRules {
-    minSize = "minimal_size",
-    minUppercase = "minimal_upper_case",
-    minLowercase = "minimal_lower_case",
-    minDigit = "minimal_digit",
-    minSpecialChars = "minimal_special_characters",
-    noRepeted = "no_repeat",
-}
 
-registerEnumType(PossibleRules, {
-    name: "possibleRules",
-    description: "Possible rules for the password"
-})
 
 @InputType()
 export class RulesInput {

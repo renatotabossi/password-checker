@@ -1,5 +1,6 @@
 import { Arg, Query, Resolver } from "type-graphql";
 import { CreateUserInput} from "../dto/inputs/create-user-input";
+import {  UserModel } from "../dto/models/user-model";
 import { validatorMap } from "../handlers/function"
 
 
@@ -10,15 +11,20 @@ export class UserResolver {
 
     }
     
-    private async checkPassword(user: CreateUserInput): Promise<String> {       
+    private async checkPassword(user: CreateUserInput): Promise<UserModel> {       
         const checkedPassword = []
+        
         for (const rule of user.rules) {
             const isPasswordValid = validatorMap[rule.rule](user)
-            console.log(isPasswordValid);
-            
+           if (isPasswordValid === false) checkedPassword.push(rule.rule)
         }
-        
-        return "teste"
+
+        const returnModel: UserModel = {
+            verify: checkedPassword.length > 0 ? true : false,
+            noMatch: checkedPassword
+        }
+
+        return returnModel
     }
 
     
