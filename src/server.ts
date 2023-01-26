@@ -20,7 +20,9 @@ async function bootstrap() {
             formatError: (error) => error
     });
 
-    const { url } = await server.listen()
+    const { url } = await server.listen({
+        port: 3000
+    })
 
     console.log(`Running on port ${url}`)
     

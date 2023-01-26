@@ -1,4 +1,4 @@
-import { Field, InputType, Int, registerEnumType} from "type-graphql";
+import { Field, InputType, Int} from "type-graphql";
 import { PossibleRules } from "../shared/rules.model";
 
 
