@@ -21,9 +21,9 @@ async function bootstrap() {
     });
 
     const { url } = await server.listen({
-        port: 3000
+        port: 8080
     })
-
+    
     console.log(`Running on port ${url}`)
     
 }

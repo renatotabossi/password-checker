@@ -9,7 +9,7 @@ interface ValidatorMap {
 }
 
 function minSizeFunc(rule: Partial<CreateUserInput>): boolean {
-    if (rule.password!.length! > rule.rules![0].value) return true
+    if (rule.password!.length! >= rule.rules![0].value) return true
     return false
   
 }
